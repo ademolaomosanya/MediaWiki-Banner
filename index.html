@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MediaWiki Template Code Generator for Banner</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* Form Styling */
+        .param-group {
+            margin: 15px 0;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            padding: 8px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: background 0.3s;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        button:hover:not(:disabled) {
+            background-color: #0056b3;
+        }
+
+        /* Preview & Output */
+        .preview {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        textarea {
+            width: 100%;
+            max-width: 500px;
+            height: 100px;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        /* Banner styles */
+        .ombox { border-left: 5px solid #36c; padding: 15px; background: #f8f9fa; }
+        .ombox-speedy { border-left-color: #d33; }
+        .ombox-content { border-left-color: #fc3; }
+        .ambox { border: 1px solid #a2a9b1; padding: 15px; background: #f8f9fa; }
+        .ambox-warning { border-left: 5px solid #fc3; }
+        .ambox-serious { border-left: 5px solid #d33; }
+        .tmbox { background: #def; border: 1px solid #48c; padding: 15px; }
+        .fmbox { border-top: 2px solid #a2a9b1; padding: 15px; background: #f8f9fa; }
+    </style>
+</head>
+<body>
+    <h1>MediaWiki Template Code Generator for Banner</h1>
+
+    <!-- Template Selector -->
+    <div class="param-group">
+        <label for="template-type">Template Type:</label>
+        <select id="template-type">
+            <option value="ombox">ombox (General)</option>
+            <option value="ambox">ambox (Article)</option>
+            <option value="tmbox">tmbox (Talk)</option>
+            <option value="fmbox">fmbox (Footer)</option>
+        </select>
+    </div>
+
+    <!-- Parameters -->
+    <div class="param-group">
+        <label for="banner-text">Message Text:</label>
+        <input type="text" id="banner-text" placeholder="Enter your message...">
+    </div>
+
+    <!-- Dynamic Type Selector -->
+    <div class="param-group" id="type-selector" style="display: none;">
+        <label for="banner-type">Message Type:</label>
+        <select id="banner-type"></select>
+    </div>
+
+    <!-- Preview & Output -->
+    <div class="preview" id="banner-preview"></div>
+    <textarea id="wikitext-output" rows="4" readonly></textarea>
+    <div class="param-group">
+        <button id="generate-button" onclick="generateCode()" disabled>Generate Code</button>
+        <button id="copy-button" onclick="copyCode()" disabled>Copy Code</button>
+    </div>
+
+    <script src="script.js">
+       
+    </script>
+</body>
+</html>
