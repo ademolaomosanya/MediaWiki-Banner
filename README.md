@@ -36,9 +36,6 @@ No installation is required. Simply open the `index.html` file in a browser to u
 │── style.css    # Styling
 ```
 
-## License
-This project is licensed under the MIT License.
-
 ## Author
 Omosanya Ademola
 
